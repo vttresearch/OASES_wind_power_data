@@ -1,0 +1,6 @@
+[submodule "ERA5-to-RE-CF-TS"]
+	path = ERA5-to-RE-CF-TS
+	url = git@github.com:work-projects-kirodh/ERA5-to-RE-CF-TS.git
+[submodule "RE-CF-TS-to-resource-grades"]
+	path = RE-CF-TS-to-resource-grades
+	url = git@github.com:work-projects-kirodh/RE-CF-TS-to-resource-grades.git

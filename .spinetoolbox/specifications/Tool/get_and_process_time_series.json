@@ -1,0 +1,28 @@
+{
+    "name": "get_and_process_time_series",
+    "tooltype": "python",
+    "includes": [
+        "power_generation_timeseries_v1.py",
+        "func1_load_era5.py",
+        "func2_interp.py",
+        "func2_no_interp.py",
+        "func3_convert_nc_data_optimised.py",
+        "func4_create_nc.py",
+        "func5_read_to_atlite_v1.py",
+        "func6_cap_fact_timeseries_v0.py"
+    ],
+    "description": "",
+    "inputfiles": [
+        "Test_Turbine.yaml",
+        "cdsapirc.txt",
+        "user_input.py"
+    ],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "output\\hourly_capacity_factors\\*.csv"
+    ],
+    "cmdline_args": [
+        "--FILENAME"
+    ],
+    "includes_main_path": "../../../ERA5-to-RE-CF-TS/src"
+}

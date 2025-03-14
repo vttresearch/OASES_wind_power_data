@@ -1,0 +1,436 @@
+{
+    "project": {
+        "version": 13,
+        "description": "",
+        "settings": {
+            "enable_execute_all": true
+        },
+        "specifications": {
+            "Tool": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/get_and_process_time_series.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/create_zonal_tiered_time_series.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/include_time_stamps.json"
+                }
+            ],
+            "Importer": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/import_ts_cf_to_flextool.json"
+                }
+            ]
+        },
+        "connections": [
+            {
+                "name": "from get_and_process_ts_settings to Time_series",
+                "from": [
+                    "get_and_process_ts_settings",
+                    "right"
+                ],
+                "to": [
+                    "Time_series",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from cdas_api_key to Time_series",
+                "from": [
+                    "cdas_api_key",
+                    "right"
+                ],
+                "to": [
+                    "Time_series",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Time_series to Zonal_time_series",
+                "from": [
+                    "Time_series",
+                    "right"
+                ],
+                "to": [
+                    "Zonal_time_series",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from zonal_tiered_settings to Zonal_time_series",
+                "from": [
+                    "zonal_tiered_settings",
+                    "right"
+                ],
+                "to": [
+                    "Zonal_time_series",
+                    "bottom"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from wind_atlas_files to Zonal_time_series",
+                "from": [
+                    "wind_atlas_files",
+                    "right"
+                ],
+                "to": [
+                    "Zonal_time_series",
+                    "bottom"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Turbine file to Time_series",
+                "from": [
+                    "Turbine file",
+                    "right"
+                ],
+                "to": [
+                    "Time_series",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from avg_atlite_cf to Zonal_time_series",
+                "from": [
+                    "avg_atlite_cf",
+                    "left"
+                ],
+                "to": [
+                    "Zonal_time_series",
+                    "bottom"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Zonal_time_series to FlexTool_time_series",
+                "from": [
+                    "Zonal_time_series",
+                    "right"
+                ],
+                "to": [
+                    "FlexTool_time_series",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from timeline to FlexTool_time_series",
+                "from": [
+                    "timeline",
+                    "left"
+                ],
+                "to": [
+                    "FlexTool_time_series",
+                    "bottom"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from FlexTool_time_series to import_time_series",
+                "from": [
+                    "FlexTool_time_series",
+                    "right"
+                ],
+                "to": [
+                    "import_time_series",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from import_time_series to Case_study",
+                "from": [
+                    "import_time_series",
+                    "right"
+                ],
+                "to": [
+                    "Case_study",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            }
+        ],
+        "jumps": []
+    },
+    "items": {
+        "Case_study": {
+            "type": "Data Store",
+            "description": "",
+            "x": -134.86256658685315,
+            "y": -85.71102906415824,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": "flextool_input_data.sqlite"
+                },
+                "schema": ""
+            }
+        },
+        "Time_series": {
+            "type": "Tool",
+            "description": "",
+            "x": -830.9309902303881,
+            "y": -90.75678811263236,
+            "specification": "get_and_process_time_series",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "<project>/ERA5-to-RE-CF-TS/src/user_input_algeria.py"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "cdas_api_key": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -966.2439022531019,
+            "y": -168.28228901803428,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "ERA5-to-RE-CF-TS/cdsapirc.txt"
+                }
+            ],
+            "db_references": []
+        },
+        "get_and_process_ts_settings": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -1052.8484026636515,
+            "y": -73.67754974109901,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "ERA5-to-RE-CF-TS/src/user_input.py"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "ERA5-to-RE-CF-TS/src/user_input_algeria.py"
+                }
+            ],
+            "db_references": []
+        },
+        "Zonal_time_series": {
+            "type": "Tool",
+            "description": "",
+            "x": -631.8912573279725,
+            "y": -88.78513647763202,
+            "specification": "create_zonal_tiered_time_series",
+            "execute_in_work": true,
+            "cmd_line_args": [],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "zonal_tiered_settings": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -811.2494076070382,
+            "y": 21.163028024531435,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "RE-CF-TS-to-resource-grades/.env"
+                }
+            ],
+            "db_references": []
+        },
+        "wind_atlas_files": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -706.4420307236443,
+            "y": 86.66763857665251,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "RE-CF-TS-to-resource-grades/assets/wind_atlas_capacity_factors.pgw"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "RE-CF-TS-to-resource-grades/assets/wind_atlas_capacity_factors.png"
+                }
+            ],
+            "db_references": []
+        },
+        "Turbine file": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -976.9175543081569,
+            "y": 12.29573439428789,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "ERA5-to-RE-CF-TS/src/custom_turbine_and_panel/Test_Turbine.yaml"
+                }
+            ],
+            "db_references": []
+        },
+        "avg_atlite_cf": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -541.1435927782927,
+            "y": 99.64792501288255,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "RE-CF-TS-to-resource-grades/assets/avg_atlite_capacity_factors.nc"
+                }
+            ],
+            "db_references": []
+        },
+        "timeline": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -399.7328921752157,
+            "y": 50.27315515087068,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "timeline.csv"
+                }
+            ],
+            "db_references": []
+        },
+        "FlexTool_time_series": {
+            "type": "Tool",
+            "description": "",
+            "x": -437.7443021673375,
+            "y": -94.41543772236692,
+            "specification": "include_time_stamps",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "<project>/timeline.csv"
+                },
+                {
+                    "type": "resource",
+                    "arg": "assets/output/capacity_factor_time_series.csv"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "import_time_series": {
+            "type": "Importer",
+            "description": "",
+            "x": -288.15101123060026,
+            "y": -85.83221611124266,
+            "specification": "import_ts_cf_to_FlexTool_db",
+            "cancel_on_error": false,
+            "on_conflict": "replace",
+            "file_selection": [
+                [
+                    "cf_with_timeline.csv",
+                    true
+                ]
+            ]
+        }
+    }
+}

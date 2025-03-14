@@ -1,0 +1,33 @@
+{
+    "name": "create_zonal_tiered_time_series",
+    "tooltype": "python",
+    "includes": [
+        "user_input_template.py",
+        "Option_1_upper_percentage_atlite.py",
+        "Option_2_upper_percentage_WAD.py",
+        "Option_3_bound_percentage_atlite.py",
+        "Option_4_bound_percentage_WAD.py",
+        "Option_5_step1_geometry_selection.py",
+        "Option_5_step2_tier_generation_average_per_geometry.py",
+        "Option_6_step1_geometry_selection.py",
+        "Option_6_step2_tier_generation_bounds_per_geometry.py",
+        "Option_7_WAD_Atlite_correction_user_defined.py",
+        "Option_Support_Functions.py",
+        "view_all_tiers.py"
+    ],
+    "description": "",
+    "inputfiles": [
+        ".env",
+        "assets/avg_atlite_capacity_factors.nc"
+    ],
+    "inputfiles_opt": [
+        "assets/wind_atlas_capacity_factors.nc",
+        "assets/wind_atlas_capacity_factors.png",
+        "output/hourly_capacity_factors/*.csv"
+    ],
+    "outputfiles": [
+        "assets/output/capacity_factor_time_series.csv"
+    ],
+    "cmdline_args": [],
+    "includes_main_path": "../../../../leap-re-wp3-wp4"
+}

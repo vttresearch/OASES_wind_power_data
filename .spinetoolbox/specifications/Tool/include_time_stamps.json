@@ -1,0 +1,17 @@
+{
+    "name": "include_time_stamps",
+    "tooltype": "python",
+    "includes": [
+        "include_time_line.py"
+    ],
+    "description": "",
+    "inputfiles": [
+        "assets/output/capacity_factor_time_series.csv"
+    ],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "cf_with_timeline.csv"
+    ],
+    "cmdline_args": [],
+    "includes_main_path": "../../.."
+}
